@@ -1,0 +1,13 @@
+.container.mt-5
+  .row
+    .col-md-8.offset-md-2
+      .item-container
+        .row
+          .col-md-6
+            = image_tag(@book.image ,class:"item-image") if @book.image.attached?
+          .col-md-6.item-description
+            %h2= @book.title
+            %p= truncate(@book.description,length:150)
+            %p.item-price
+              $#{@book.price}
+            = link_to "Add To Cart",'/books/'+@book.id.to_s,method: :post,class:"btn btn-primary"

@@ -1,0 +1,22 @@
+/ Jumbotron
+.jumbotron
+  %h1.display-4 Welcome to Our Book Shop
+  %p.lead Discover amazing features and services.
+  = link_to "Learn More",about_path,class:"btn btn-lg btn-primary"
+.container
+  .row
+    .col-lg-4
+      = link_to filter_path("fiction") do
+        .feature-box
+          %h3 Fiction Books
+          %p A work of fiction is created in the imagination of its author. The author invents the story and makes up the characters, the plot or storyline, the dialogue and sometimes even the setting. A fictional work does not claim to tell a true story.
+    .col-lg-4
+      = link_to filter_path("non-fiction") do
+        .feature-box
+          %h3 Non-Fiction Books
+          %p Non-fiction (or nonfiction) is any document or media content that attempts, in good faith, to convey information only about the real world, rather than being grounded in imagination. Non-fiction typically aims to present topics objectively based on historical, scientific, and empirical information.
+    .col-lg-4
+      = link_to filter_path("story") do
+        .feature-box
+          %h3 Story Books
+          %p A storybook is a book of stories for children. As a child she learned to draw by tracing pictures out of her mother's old storybooks.

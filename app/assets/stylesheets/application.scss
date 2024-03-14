@@ -1,0 +1,141 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap/scss/bootstrap";
+
+.jumbotron {
+    // background-color: #343a40;
+    color: #fff;
+}
+body {
+  background-image: url('12.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.feature-icon {
+    font-size: 4rem;
+    color: #007bff;
+}
+
+.feature-text {
+    font-size: 1.5rem;
+    color: #6c757d;
+}
+.content {
+  flex: 1;
+  padding: 20px;
+}
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+  margin-top: auto; /* Push the footer to the bottom */
+}
+
+// body {
+//     background-color: #f8f9fa;
+//     font-family: Arial, sans-serif;
+//   }
+  .jumbotron {
+    color: #fff;
+    padding: 100px;
+    border-radius: 0;
+    text-align: center;
+    margin-bottom: 0;
+  }
+  .feature-box {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    transition: transform 0.3s ease-in-out;
+  }
+  .feature-box:hover {
+    transform: translateY(-10px);
+  }
+  .feature-box h3 {
+    color: #007bff;
+  }
+
+  .navbar {
+    background-color: #343a40; /* Navbar background color */
+    border-radius: 0;
+    padding: 10px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adding a subtle shadow */
+  }
+  .navbar-brand {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  .nav-link {
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-in-out;
+  }
+  .nav-link:hover {
+    color: #ffc107; /* Change color on hover */
+    transform: translateY(-3px); /* Add a subtle lift effect */
+  }
+  .dropdown-menu {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(10px);
+    right: 0; /* Align dropdown menu to the right */
+    left: auto; /* Reset left position */
+  }
+  .dropdown-item {
+    color: #000;
+    background-color: #fff;
+    transition: background-color 0.3s ease;
+  }
+  .dropdown-item:hover {
+    background-color: #007bff;
+    color: #fff;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .flash-message {
+    position: relative;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    transform: perspective(100px) rotateX(30deg) rotateY(30deg);
+  }
+  
+  .flash-message .btn-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  

@@ -1,0 +1,30 @@
+.container.mt-5
+  .row
+    .col-md-8.offset-md-2
+      .upload-container
+        .upload-content
+          %h2.text-center.mb-4 Upload Book Details
+          = form_with scope: :book,url:"/books",local:true do |f|
+            .form-group.mt-3
+              = f.label :title
+              = f.text_field :title,class:"form-control",placeholder:"Enter book title"
+            .form-group.mt-3
+              = f.label :author_name
+              = f.text_field :author_name,class:"form-control",placeholder:"Enter author name"
+            .form-group.mt-3
+              = f.label :description
+              = f.text_area :description,class:"form-control",rows:3,placeholder:"Enter book description"
+            .form-group.mt-3
+              = f.label :category
+              = f.text_field :category,class:"form-control",placeholder:"Enter book category"
+            .form-group.mt-3
+              = f.label :price
+              = f.text_field :price,class:"form-control",placeholder:"Enter book price"
+            .form-group.mt-3
+              = f.label :quantity
+              = f.text_field :quantity,class:"form-control",placeholder:"Enter book quantity"
+            .form-group.mt-3
+              = f.label :image
+              = f.file_field :image,class:"form-control"
+            %br/
+            = f.submit "Upload",class:"btn btn-primary btn-block"

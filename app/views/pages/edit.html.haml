@@ -1,0 +1,14 @@
+.signup-container
+  %h2 Edit User
+  = form_with model:@user,url:profile_path,method: :patch, local:true do |f|
+    .form-floating.mt-3
+      = f.text_field :username,class:"form-control",placeholder:"Username"
+      = f.label :username
+    .form-floating.mt-3
+      = f.email_field :email,class:"form-control",placeholder:"name@example.com"
+      = f.label :email
+    .form-floating.mt-3
+      = f.password_field :password,class:"form-control",placeholder:"Password"
+      = f.label :password
+    = f.file_field :image,class:"form-control"
+    = f.submit "Update User",class:"signup-btn"

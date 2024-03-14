@@ -1,0 +1,12 @@
+.container.mt-5
+  .row
+    - @books.each do |book|
+      .col-lg-3.col-md-4.col-sm-6
+        .card
+          = link_to book_path(book.id) do
+            = image_tag(book.image, class: "card-img-top") if book.image.attached?
+            .card-body
+              %h5.card-title= book.title
+              %p.card-text= truncate(book.description, length: 20)
+          .card-footer
+            = link_to "Buy Now", book_path(book), method: :post, class: "btn btn-primary"

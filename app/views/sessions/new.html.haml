@@ -1,0 +1,10 @@
+.login-container
+  %h2 Login
+  = form_with scope: :user,url:login_path,local:true do |f|
+    .form-floating.mt-3
+      = f.email_field :email,class:"form-control",placeholder:"name@example.com"
+      = f.label :email
+    .form-floating.mt-3
+      = f.password_field :password,class:"form-control",placeholder:"Password"
+      = f.label :password
+    = f.submit "Login",class:"login-btn"

@@ -1,0 +1,43 @@
+%nav.navbar.navbar-expand-lg.navbar-dark
+  .container-fluid
+    = link_to "Book Store",root_path,class:"navbar-brand"
+    %button.navbar-toggler{"aria-controls" => "navbarNav", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-bs-target" => "#navbarNav", "data-bs-toggle" => "collapse", :type => "button"}
+      %span.navbar-toggler-icon
+    #navbarNav.collapse.navbar-collapse
+      %ul.navbar-nav.ml-auto
+        %li.nav-item
+          = link_to "Home",root_path,class:"nav-link"
+        %li.nav-item
+          = link_to "About",about_path,class:"nav-link"
+        %li.nav-item
+          = link_to "Books",books_path,class:"nav-link"
+        - if loggedIn?
+          %li.nav-item
+            = link_to "Carts",cart_path(current_user.id),class:"nav-link"
+    - if loggedIn?
+      .container.d-flex.justify-content-end
+        = form_tag search_path,method: :get do
+          = text_field_tag :search , params[:search]
+          = button_tag type: :submit do
+            Search
+        %div
+          .container
+            .dropdown.d-flex.justify-content-end
+              %button#dropdownMenuButton.btn.btn-primary.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", :type => "button"}
+                = current_user.username
+              %ul.dropdown-menu.dropdown-menu-end{"aria-labelledby" => "dropdownMenuButton"}
+                / Add dropdown-menu-end class
+                %li= link_to "Profile",profile_path(current_user.id),class:"dropdown-item"
+                - if current_user.admin?
+                  %li= link_to "Add Books",new_book_path,class:"dropdown-item"
+                = link_to "Carts",cart_path(current_user.id),class:"dropdown-item"
+                %li= link_to "Logout",logout_path,method: :delete,class:"dropdown-item"
+    - else
+      .container
+        .dropdown.d-flex.justify-content-end
+          %button#dropdownMenuButton.btn.btn-primary.dropdown-toggle{"aria-expanded" => "false", "data-bs-toggle" => "dropdown", :type => "button"}
+            Account
+          %ul.dropdown-menu.dropdown-menu-end{"aria-labelledby" => "dropdownMenuButton"}
+            / Add dropdown-menu-end class
+            %li= link_to "Log In",login_path,class:"dropdown-item"
+            = link_to "Sign Up",signup_path,class:"dropdown-item"

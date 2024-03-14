@@ -1,0 +1,14 @@
+.container.mt-5
+  .row
+    .col-md-6.offset-md-3
+      .profile-card
+        .profile-image.mx-auto
+          = image_tag(@user.image, style: "height: 170px;width : 140px")
+        .profile-details.text-center
+          %h2= @user.username
+          %p
+            Email: #{@user.email}
+          %p Location: Avaraikulam
+          %p Bio: Learning Ruby On Rails
+          = link_to "Edit Profile",profileEdit_path(@user.id),class:"btn btn-primary"
+          = link_to "Delete Profile",profile_path(@user.id),method: :delete,class:"btn btn-danger"

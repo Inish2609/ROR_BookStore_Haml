@@ -1,0 +1,24 @@
+.container.mt-5
+  .row
+    - @items.each do |item|
+      .col-md-6
+        .cart-item
+          .row
+            .col-md-4
+              = image_tag(item.book.image, class: "cart-image mx-auto d-block") if item.book.image.attached?
+            .col-md-8-ml-5
+              .cart-details
+                %h3= item.book.title
+                %p
+                  Price: $#{item.book.price}
+                = link_to "Remove",item_path(item.id),method: :delete,class:"btn btn-danger"
+              %div
+                - @total = @total+item.book.price
+.container.mt-5
+  .row
+    .col-md-6.offset-md-3
+      .buy-section
+        %h2.text-center Buy Section
+        %p.text-center
+          Total Price: #{number_to_currency(@total)}
+        = link_to 'Subscribe', pay_path(price: @total), method: :post,class:"btn btn-primary buy-button"
